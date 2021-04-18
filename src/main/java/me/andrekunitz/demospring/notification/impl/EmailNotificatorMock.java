@@ -6,23 +6,21 @@ import me.andrekunitz.demospring.notification.Notificator;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-public class EmailNotificator implements Notificator {
+public class EmailNotificatorMock implements Notificator {
 
     private boolean upperCase;
     private String hostSmtpServer;
 
-    public EmailNotificator(String hostSmtpServer) {
+    public EmailNotificatorMock(String hostSmtpServer) {
         this.hostSmtpServer = hostSmtpServer;
     }
 
-    @PostConstruct
     public void init() {
-        System.out.println("INIT: EmailNotificator");
+        System.out.println("INIT: EmailNotificatorMock");
     }
 
-    @PreDestroy
     public void destroy() {
-        System.out.println("DESTROY: EmailNotificator");
+        System.out.println("DESTROY: EmailNotificatorMock");
     }
 
     @Override
@@ -31,7 +29,7 @@ public class EmailNotificator implements Notificator {
             message = message.toUpperCase();
         }
 
-        return String.format("Notifying %s via EMAIL %s: %s\n",
+        return String.format("MOCK: Notifying %s via EMAIL %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);
     }
 
