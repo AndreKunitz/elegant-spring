@@ -26,12 +26,12 @@ public class EmailNotificator implements Notificator {
     }
 
     @Override
-    public String notify(Costumer costumer, String message) {
+    public void notify(Costumer costumer, String message) {
         if (this.upperCase) {
             message = message.toUpperCase();
         }
 
-        return String.format("Notifying %s via EMAIL %s: %s\n",
+        System.out.printf("Notifying %s via EMAIL %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);
     }
 

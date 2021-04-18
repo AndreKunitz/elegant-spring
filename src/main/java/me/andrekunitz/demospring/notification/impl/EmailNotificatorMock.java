@@ -3,9 +3,6 @@ package me.andrekunitz.demospring.notification.impl;
 import me.andrekunitz.demospring.model.Costumer;
 import me.andrekunitz.demospring.notification.Notificator;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-
 public class EmailNotificatorMock implements Notificator {
 
     private boolean upperCase;
@@ -24,12 +21,12 @@ public class EmailNotificatorMock implements Notificator {
     }
 
     @Override
-    public String notify(Costumer costumer, String message) {
+    public void notify(Costumer costumer, String message) {
         if (this.upperCase) {
             message = message.toUpperCase();
         }
 
-        return String.format("MOCK: Notifying %s via EMAIL %s: %s\n",
+        System.out.printf("MOCK: Notifying %s via EMAIL %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);
     }
 

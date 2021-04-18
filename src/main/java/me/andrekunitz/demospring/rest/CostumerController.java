@@ -1,9 +1,7 @@
 package me.andrekunitz.demospring.rest;
 
 import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.notification.Notificator;
 import me.andrekunitz.demospring.service.ActivateCostumerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,9 +15,9 @@ public class CostumerController {
     }
 
     @GetMapping
-    public String createCostumer() {
+    public void createCostumer() {
         var costumer = new Costumer("André", "costumer@email.com", "000 000 000");
-        return activateCostumerService.activate(costumer);
+        activateCostumerService.activate(costumer);
     }
 
 }

@@ -1,24 +1,19 @@
 package me.andrekunitz.demospring.service;
 
 import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.notification.Notificator;
-import me.andrekunitz.demospring.notification.NotificatorType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
-import static me.andrekunitz.demospring.notification.UrgencyLevel.*;
 
 @Service
 public class ActivateCostumerService {
 
-    private Notificator notificator;
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
 
-    public ActivateCostumerService(
-            @NotificatorType(NON_URGENT) Notificator notificator) {
-        this.notificator = notificator;
-    }
-
-    public String activate(Costumer costumer) {
+    public void activate(Costumer costumer) {
         costumer.activate();
-        return this.notificator.notify(costumer, "Your registration in the system is active!");
+        eventPublisher.publishEvent(new ActivatedCostumerEvent(costumer));
     }
 }

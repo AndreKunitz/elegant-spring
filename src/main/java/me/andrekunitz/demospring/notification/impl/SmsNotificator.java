@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class SmsNotificator implements Notificator {
     @Override
-    public String notify(Costumer costumer, String message) {
-        return String.format("Notifying %s via SMS %s: %s\n",
+    public void notify(Costumer costumer, String message) {
+        System.out.printf("Notifying %s via SMS %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);
     }
 }
