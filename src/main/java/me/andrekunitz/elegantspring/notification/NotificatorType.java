@@ -1,4 +1,4 @@
-package me.andrekunitz.demospring.notification;
+package me.andrekunitz.elegantspring.notification;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 

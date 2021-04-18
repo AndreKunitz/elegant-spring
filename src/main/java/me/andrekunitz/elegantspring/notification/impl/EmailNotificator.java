@@ -1,7 +1,8 @@
-package me.andrekunitz.demospring.notification.impl;
+package me.andrekunitz.elegantspring.notification.impl;
 
-import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.notification.Notificator;
+import me.andrekunitz.elegantspring.model.Costumer;
+import me.andrekunitz.elegantspring.notification.Notificator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -9,11 +10,9 @@ import javax.annotation.PreDestroy;
 public class EmailNotificator implements Notificator {
 
     private boolean upperCase;
-    private String hostSmtpServer;
 
-    public EmailNotificator(String hostSmtpServer) {
-        this.hostSmtpServer = hostSmtpServer;
-    }
+    @Autowired
+    private EmailNotificatorProperties properties;
 
     @PostConstruct
     public void init() {
@@ -30,6 +29,8 @@ public class EmailNotificator implements Notificator {
         if (this.upperCase) {
             message = message.toUpperCase();
         }
+
+        System.out.println("EMAIL SERVER: " + properties.getServerHost() + ":" + properties.getServerPort());
 
         System.out.printf("Notifying %s via EMAIL %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);

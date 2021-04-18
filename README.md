@@ -4,18 +4,20 @@ Spring project demonstrating elegant ways on how to:
 - Disambiguate beans using custom annotations and qualifiers.  
 - Inject custom beans in *Spring IoC Container* with custom configuration.
 - Configure application using *Spring profiles*
-- Increase cohesion using Spring native *Observer Pattern* 
+- Increase cohesion using Spring native *Observer Pattern*
+- Customize application properties
 
 ## How to use:
-- Build project: `gradle assemble`
+- Build and start project: `gradle bootRun`
 - Access `localhost:8080`
 - See application logs
 
-### Important topics covered:
+## Important topics covered:
 - `@Bean, @Qualifier, @Configuration` Spring annotations;
 - Spring profiles;
 - Spring beans lifecycle methods;
-- Spring Observer Pattern implementation;
+- Native Spring Observer Pattern implementation;
+- Custom property class with `@ConfigurationPropeties` annotation
 
 ### Alternative option for multiple beans:
 - An option if having **multiple implementations** of a Bean, is to receive in the injection point a list of Beans, and iterate each bean calling its method.

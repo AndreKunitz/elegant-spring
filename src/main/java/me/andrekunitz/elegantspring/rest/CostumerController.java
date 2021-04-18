@@ -1,7 +1,7 @@
-package me.andrekunitz.demospring.rest;
+package me.andrekunitz.elegantspring.rest;
 
-import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.service.ActivateCostumerService;
+import me.andrekunitz.elegantspring.model.Costumer;
+import me.andrekunitz.elegantspring.service.ActivateCostumerService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

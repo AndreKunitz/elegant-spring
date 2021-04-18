@@ -1,16 +1,15 @@
-package me.andrekunitz.demospring.notification.impl;
+package me.andrekunitz.elegantspring.notification.impl;
 
-import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.notification.Notificator;
+import me.andrekunitz.elegantspring.model.Costumer;
+import me.andrekunitz.elegantspring.notification.Notificator;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class EmailNotificatorMock implements Notificator {
 
     private boolean upperCase;
-    private String hostSmtpServer;
 
-    public EmailNotificatorMock(String hostSmtpServer) {
-        this.hostSmtpServer = hostSmtpServer;
-    }
+    @Autowired
+    private EmailNotificatorProperties properties;
 
     public void init() {
         System.out.println("INIT: EmailNotificatorMock");
@@ -25,6 +24,8 @@ public class EmailNotificatorMock implements Notificator {
         if (this.upperCase) {
             message = message.toUpperCase();
         }
+
+        System.out.println("EMAIL SERVER: " + properties.getServerHost() + ":" + properties.getServerPort());
 
         System.out.printf("MOCK: Notifying %s via EMAIL %s: %s\n",
                 costumer.getName(), costumer.getEmail(), message);

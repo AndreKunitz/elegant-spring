@@ -1,9 +1,9 @@
-package me.andrekunitz.demospring.notification.impl;
+package me.andrekunitz.elegantspring.notification.impl;
 
-import me.andrekunitz.demospring.model.Costumer;
-import me.andrekunitz.demospring.notification.Notificator;
-import me.andrekunitz.demospring.notification.NotificatorType;
-import me.andrekunitz.demospring.notification.UrgencyLevel;
+import me.andrekunitz.elegantspring.model.Costumer;
+import me.andrekunitz.elegantspring.notification.Notificator;
+import me.andrekunitz.elegantspring.notification.NotificatorType;
+import me.andrekunitz.elegantspring.notification.UrgencyLevel;
 import org.springframework.stereotype.Component;
 
 @NotificatorType(UrgencyLevel.URGENT)

@@ -1,7 +1,7 @@
-package me.andrekunitz.demospring.service;
+package me.andrekunitz.elegantspring.service;
 
 import lombok.Getter;
-import me.andrekunitz.demospring.model.Costumer;
+import me.andrekunitz.elegantspring.model.Costumer;
 
 @Getter
 public class ActivatedCostumerEvent {

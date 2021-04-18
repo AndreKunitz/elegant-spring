@@ -1,10 +1,9 @@
-package me.andrekunitz.demospring.service;
+package me.andrekunitz.elegantspring.service;
 
-import me.andrekunitz.demospring.model.Costumer;
+import me.andrekunitz.elegantspring.model.Costumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
-
 
 @Service
 public class ActivateCostumerService {

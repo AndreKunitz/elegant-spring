@@ -1,4 +1,4 @@
-package me.andrekunitz.demospring.notification;
+package me.andrekunitz.elegantspring.notification;
 
 public enum UrgencyLevel {
     URGENT,

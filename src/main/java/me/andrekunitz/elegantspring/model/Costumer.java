@@ -1,6 +1,5 @@
-package me.andrekunitz.demospring.model;
+package me.andrekunitz.elegantspring.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @Getter
